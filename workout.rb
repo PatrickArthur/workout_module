@@ -27,6 +27,10 @@ module ExerciseAlgorithms
       LiftPercentage.new.calc_perc(rep, lift)
     end
   end
+
+  def print_message(gym)
+    puts "WorkoutTracker for #{gym}"
+  end
 end
 
 class Exercise
@@ -67,5 +71,6 @@ end
 
 test = Person.new(name: { lift: ['bench', 1, 250], body: [190, 36] },
                   name2: { lift: ['squat', 1, 250], body: [250, 36] })
+test.print_message("Golds")
 test.print_user_bodyfat
 test.goal

@@ -50,27 +50,24 @@ class Exercise
   private
 
   def print_user_goal(goal)
-    goal.each do |k, v|
-      puts "#{k} #{v}"
-    end
+    goal.each { |k, v| puts "#{k} #{v}" }
   end
 end
 
 class Person < Exercise
   include ExerciseAlgorithms
+
   def initialize(input)
     @input = input
   end
 
   def print_user_bodyfat
-    @input.each do |k, v|
-      puts "#{k} bodyfat is #{body_fat(v[:body][0], v[:body][1])}"
-    end
+    @input.each { |k, v| puts "#{k} bodyfat is #{body_fat(v[:body][0], v[:body][1])}" }
   end
 end
 
 test = Person.new(name: { lift: ['bench', 1, 250], body: [190, 36] },
                   name2: { lift: ['squat', 1, 250], body: [250, 36] })
-test.print_message("Golds")
+test.print_message('Golds')
 test.print_user_bodyfat
 test.goal
